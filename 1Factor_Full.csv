@@ -1,0 +1,5 @@
+﻿type_test,method,contrast_type,significant_findings,false_discovery,time
+rna-seq,edgeR,COLENDDAY~COLEXDARK,4998,499.8,7.392
+rna-seq,DESeq2,COLENDDAY~COLEXDARK,9513,951.3,18.629
+ribo-seq,edgeR,COLENDDAY~COLEXDARK,2356,235.6,4.866
+ribo-seq,DESeq2,COLENDDAY~COLEXDARK,2977,297.7,17.577

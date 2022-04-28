@@ -1,0 +1,778 @@
+---
+title: "Arabidopsis thaliana 2"
+author: "Alice Gee"
+date: "3/22/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r message=FALSE, warning=FALSE}
+library(BiocManager)
+source("rnaseq_utils.R")
+library(DESeq2)
+library(BiocParallel)
+library(ggplot2)
+library(dplyr)
+library(tidyverse)
+library(tidyr)
+library(edgeR)
+library(sys)
+```
+
+```{r}
+# remove the outlier
+rnaCounts <- rnaCounts %>% select(-`4GEXDARK4`)
+sampleAnnotation <- sampleAnnotation[colnames(rnaCounts),] 
+riboCounts <- riboCounts %>% select(-`4GEXDARK4`)
+sampleAnnotation2 <- sampleAnnotation2[colnames(riboCounts),] 
+```
+
+```{r}
+rnaCounts = data.frame(rnaCounts)
+rownames(sampleAnnotation) = colnames(rnaCounts)
+sampleAnnotation$group <- ifelse(substr(sampleAnnotation$group, 1, 1) %in% c("1", "4"),
+                                 paste0("X", sampleAnnotation$group), 
+                                 sampleAnnotation$group) 
+```
+
+# RNA-Seq 
+
+## EdgeR  
+```{r}
+group = factor(sampleAnnotation$group)
+y = DGEList(counts = rnaCounts, 
+        group = group,
+        genes = rownames(rnaCounts))
+y$samples
+
+design <- model.matrix(~0+group)
+colnames(design) <- levels(group)
+keep <- filterByExpr(y, design)
+y <- y[keep, , keep.lib.sizes=FALSE]
+AveLogCPM <- aveLogCPM(y)
+hist(AveLogCPM)
+y <- calcNormFactors(y)
+y$samples
+
+for (i in 1:ncol(y)){
+  plotMD(y, column=i)
+  abline(h=0, col="red", lty=2, lwd=2)
+}
+```
+
+# contrast between day and dark; wild-type 
+```{r}
+start_time <- Sys.time()
+
+group = factor(sampleAnnotation$group)
+y = DGEList(counts = rnaCounts, 
+        group = group,
+        genes = rownames(rnaCounts))
+#y$samples
+
+design <- model.matrix(~0+group)
+colnames(design) <- levels(group)
+keep <- filterByExpr(y, design)
+y <- y[keep, , keep.lib.sizes=FALSE]
+AveLogCPM <- aveLogCPM(y)
+#hist(AveLogCPM)
+y <- calcNormFactors(y)
+#y$samples
+
+y <- estimateDisp(y, design, robust=TRUE) 
+#y$samples
+#plotBCV(y) 
+
+fit <- glmQLFit(y, design, robust=TRUE) 
+#plotQLDisp(fit)
+#summary(fit$df.prior)
+
+day_vs_dark <- makeContrasts(COLENDDAY - COLEXDARK, levels = design) 
+tr <- glmTreat(fit, contrast=day_vs_dark, lfc=log2(1.5))
+topTags(tr)
+is.de <- decideTestsDGE(tr)
+summary(is.de)
+plotMD(tr, status=is.de)
+output = as.data.frame(topTags(tr, n = 10000))
+sum(output$FDR < 0.1)
+sig_genes_edge <- rownames(output[which(output$FDR < 0.1),])
+
+end_time <- Sys.time()
+print(end_time - start_time)
+```
+
+```{r}
+start_time <- Sys.time()
+
+DESeqDataSet = DESeqDataSetFromMatrix(
+    countData = rnaCounts,
+    colData = sampleAnnotation,
+    design = ~ group
+)
+
+DESeqDataSet = DESeq(
+  DESeqDataSet, 
+  parallel=FALSE
+  ) 
+
+DESeq_Results <- results(DESeqDataSet, contrast = c("group", "COLENDDAY", "COLEXDARK"))
+# indexes that all have a value 
+clean_DESeq_padj <- which(!is.na(DESeq_Results$padj))
+sum(DESeq_Results[clean_DESeq_padj, "padj"] <= 0.1)
+sum(DESeq_Results[clean_DESeq_padj, "padj"] <= 0.1) * 0.1
+sig_genes_DESeq <- rownames(DESeq_Results[which(clean_DESeq_padj <= 0.1)])
+length(intersect(sig_genes_DESeq, sig_genes_edge))
+
+end_time <- Sys.time()
+print(end_time - start_time)
+```
+
+# contrast between day and dark; 14G mutant 
+```{r}
+start_time <- Sys.time()
+
+day_vs_dark <- makeContrasts(X14BENDDAY - X14BEXDARK, levels = design) 
+
+tr <- glmTreat(fit, contrast=day_vs_dark, lfc=log2(1.5))
+topTags(tr)
+is.de <- decideTestsDGE(tr)
+summary(is.de)
+plotMD(tr, status=is.de)
+output = as.data.frame(topTags(tr, n = 10000))
+sum(output$FDR < 0.1)
+sig_genes_edge <- rownames(output[which(output$FDR < 0.1),])
+
+end_time <- Sys.time()
+print(end_time - start_time)
+```
+
+```{r}
+start_time <- Sys.time()
+
+DESeq_Results <- results(DESeqDataSet, contrast = c("group", "X14BENDDAY", "X14BEXDARK"))
+# indexes that all have a value 
+clean_DESeq_padj <- which(!is.na(DESeq_Results$padj))
+sum(DESeq_Results[clean_DESeq_padj, "padj"] <= 0.1)
+sum(DESeq_Results[clean_DESeq_padj, "padj"] <= 0.1) * 0.1
+sig_genes_DESeq <- rownames(DESeq_Results[which(clean_DESeq_padj <= 0.1)])
+length(intersect(sig_genes_DESeq, sig_genes_edge))
+
+end_time <- Sys.time()
+print(end_time - start_time)
+```
+
+# contrast between day and dark; 4G
+```{r}
+start_time <- Sys.time()
+
+day_vs_dark <- makeContrasts(X4GENDDAY - X4GEXDARK, levels = design) 
+
+tr <- glmTreat(fit, contrast=day_vs_dark, lfc=log2(1.5))
+topTags(tr)
+is.de <- decideTestsDGE(tr)
+summary(is.de)
+plotMD(tr, status=is.de)
+output = as.data.frame(topTags(tr, n = 10000))
+sum(output$FDR < 0.1)
+sig_genes_edge <- rownames(output[which(output$FDR < 0.1),])
+
+end_time <- Sys.time()
+print(end_time - start_time)
+```
+
+```{r}
+start_time <- Sys.time()
+
+DESeq_Results <- results(DESeqDataSet, contrast = c("group", "X4GENDDAY", "X4GEXDARK"))
+# indexes that all have a value 
+clean_DESeq_padj <- which(!is.na(DESeq_Results$padj))
+sum(DESeq_Results[clean_DESeq_padj, "padj"] <= 0.1)
+sum(DESeq_Results[clean_DESeq_padj, "padj"] <= 0.1) * 0.1
+sig_genes_DESeq <- rownames(DESeq_Results[which(clean_DESeq_padj <= 0.1)])
+length(intersect(sig_genes_DESeq, sig_genes_edge))
+
+end_time <- Sys.time()
+print(end_time - start_time)
+```
+
+# contrast between genotypes, day: COL and 14B
+```{r}
+start_time <- Sys.time()
+
+day_vs_dark <- makeContrasts(COLENDDAY - X14BENDDAY, levels = design) 
+
+tr <- glmTreat(fit, contrast=day_vs_dark, lfc=log2(1.5))
+topTags(tr)
+is.de <- decideTestsDGE(tr)
+summary(is.de)
+plotMD(tr, status=is.de)
+output = as.data.frame(topTags(tr, n = 10000))
+sum(output$FDR < 0.1)
+sig_genes_edge <- rownames(output[which(output$FDR < 0.1),])
+
+end_time <- Sys.time()
+print(end_time - start_time)
+```
+
+```{r}
+start_time <- Sys.time()
+
+DESeq_Results <- results(DESeqDataSet, contrast = c("group", "COLENDDAY", "X14BENDDAY"))
+# indexes that all have a value 
+clean_DESeq_padj <- which(!is.na(DESeq_Results$padj))
+sum(DESeq_Results[clean_DESeq_padj, "padj"] <= 0.1)
+sum(DESeq_Results[clean_DESeq_padj, "padj"] <= 0.1) * 0.1
+sig_genes_DESeq <- rownames(DESeq_Results[which(clean_DESeq_padj <= 0.1)])
+length(intersect(sig_genes_DESeq, sig_genes_edge))
+
+end_time <- Sys.time()
+print(end_time - start_time)
+```
+
+# contrast between genotypes, night: COL and 14B
+```{r}
+start_time <- Sys.time()
+
+day_vs_dark <- makeContrasts(COLEXDARK - X14BEXDARK, levels = design) 
+
+tr <- glmTreat(fit, contrast=day_vs_dark, lfc=log2(1.5))
+topTags(tr)
+is.de <- decideTestsDGE(tr)
+summary(is.de)
+plotMD(tr, status=is.de)
+output = as.data.frame(topTags(tr, n = 10000))
+sum(output$FDR < 0.1)
+sig_genes_edge <- rownames(output[which(output$FDR < 0.1),])
+
+end_time <- Sys.time()
+print(end_time - start_time)
+```
+
+```{r}
+start_time <- Sys.time()
+
+DESeq_Results <- results(DESeqDataSet, contrast = c("group", "COLEXDARK", "X14BEXDARK"))
+# indexes that all have a value 
+clean_DESeq_padj <- which(!is.na(DESeq_Results$padj))
+sum(DESeq_Results[clean_DESeq_padj, "padj"] <= 0.1)
+sum(DESeq_Results[clean_DESeq_padj, "padj"] <= 0.1) * 0.1
+sig_genes_DESeq <- rownames(DESeq_Results[which(clean_DESeq_padj <= 0.1)])
+length(intersect(sig_genes_DESeq, sig_genes_edge))
+
+end_time <- Sys.time()
+print(end_time - start_time)
+```
+
+# contrast between genotypes, day: COL and 4G
+```{r}
+start_time <- Sys.time()
+
+day_vs_dark <- makeContrasts(COLENDDAY - X4GENDDAY, levels = design) 
+
+tr <- glmTreat(fit, contrast=day_vs_dark, lfc=log2(1.5))
+topTags(tr)
+is.de <- decideTestsDGE(tr)
+summary(is.de)
+plotMD(tr, status=is.de)
+output = as.data.frame(topTags(tr, n = 10000))
+sum(output$FDR < 0.1)
+sig_genes_edge <- rownames(output[which(output$FDR < 0.1),])
+
+end_time <- Sys.time()
+print(end_time - start_time)
+```
+
+```{r}
+start_time <- Sys.time()
+
+DESeq_Results <- results(DESeqDataSet, contrast = c("group", "COLENDDAY", "X4GENDDAY"))
+# indexes that all have a value 
+clean_DESeq_padj <- which(!is.na(DESeq_Results$padj))
+sum(DESeq_Results[clean_DESeq_padj, "padj"] <= 0.1)
+sum(DESeq_Results[clean_DESeq_padj, "padj"] <= 0.1) * 0.1
+sig_genes_DESeq <- rownames(DESeq_Results[which(clean_DESeq_padj <= 0.1)])
+length(intersect(sig_genes_DESeq, sig_genes_edge))
+
+end_time <- Sys.time()
+print(end_time - start_time)
+```
+
+# contrast between genotypes, night: COL and 4G
+```{r}
+start_time <- Sys.time()
+
+day_vs_dark <- makeContrasts(COLEXDARK - X4GEXDARK, levels = design) 
+
+tr <- glmTreat(fit, contrast=day_vs_dark, lfc=log2(1.5))
+topTags(tr)
+is.de <- decideTestsDGE(tr)
+summary(is.de)
+plotMD(tr, status=is.de)
+output = as.data.frame(topTags(tr, n = 10000))
+sum(output$FDR < 0.1)
+sig_genes_edge <- rownames(output[which(output$FDR < 0.1),])
+
+end_time <- Sys.time()
+print(end_time - start_time)
+```
+
+```{r}
+start_time <- Sys.time()
+
+DESeq_Results <- results(DESeqDataSet, contrast = c("group", "COLEXDARK", "X4GEXDARK"))
+# indexes that all have a value 
+clean_DESeq_padj <- which(!is.na(DESeq_Results$padj))
+sum(DESeq_Results[clean_DESeq_padj, "padj"] <= 0.1)
+sum(DESeq_Results[clean_DESeq_padj, "padj"] <= 0.1) * 0.1
+sig_genes_DESeq <- rownames(DESeq_Results[which(clean_DESeq_padj <= 0.1)])
+length(intersect(sig_genes_DESeq, sig_genes_edge))
+
+end_time <- Sys.time()
+print(end_time - start_time)
+```
+
+# contrast between genotypes, day: 14B and 4G
+```{r}
+start_time <- Sys.time()
+
+day_vs_dark <- makeContrasts(X14BENDDAY - X4GENDDAY, levels = design) 
+
+tr <- glmTreat(fit, contrast=day_vs_dark, lfc=log2(1.5))
+topTags(tr)
+is.de <- decideTestsDGE(tr)
+summary(is.de)
+plotMD(tr, status=is.de)
+output = as.data.frame(topTags(tr, n = 10000))
+sum(output$FDR < 0.1)
+sig_genes_edge <- rownames(output[which(output$FDR < 0.1),])
+
+end_time <- Sys.time()
+print(end_time - start_time)
+```
+
+```{r}
+start_time <- Sys.time()
+
+DESeq_Results <- results(DESeqDataSet, contrast = c("group", "X14BENDDAY", "X4GENDDAY"))
+# indexes that all have a value 
+clean_DESeq_padj <- which(!is.na(DESeq_Results$padj))
+sum(DESeq_Results[clean_DESeq_padj, "padj"] <= 0.1)
+sum(DESeq_Results[clean_DESeq_padj, "padj"] <= 0.1) * 0.1
+sig_genes_DESeq <- rownames(DESeq_Results[which(clean_DESeq_padj <= 0.1)])
+length(intersect(sig_genes_DESeq, sig_genes_edge))
+
+end_time <- Sys.time()
+print(end_time - start_time)
+```
+
+# contrast between genotypes, night: 14B and 4G
+```{r}
+start_time <- Sys.time()
+
+day_vs_dark <- makeContrasts(X14BEXDARK - X4GEXDARK, levels = design) 
+
+tr <- glmTreat(fit, contrast=day_vs_dark, lfc=log2(1.5))
+topTags(tr)
+is.de <- decideTestsDGE(tr)
+summary(is.de)
+plotMD(tr, status=is.de)
+output = as.data.frame(topTags(tr, n = 10000))
+sum(output$FDR < 0.1)
+sig_genes_edge <- rownames(output[which(output$FDR < 0.1),])
+
+end_time <- Sys.time()
+print(end_time - start_time)
+```
+
+```{r}
+start_time <- Sys.time()
+
+DESeq_Results <- results(DESeqDataSet, contrast = c("group", "X14BEXDARK", "X4GEXDARK"))
+# indexes that all have a value 
+clean_DESeq_padj <- which(!is.na(DESeq_Results$padj))
+sum(DESeq_Results[clean_DESeq_padj, "padj"] <= 0.1)
+sum(DESeq_Results[clean_DESeq_padj, "padj"] <= 0.1) * 0.1
+sig_genes_DESeq <- rownames(DESeq_Results[which(clean_DESeq_padj <= 0.1)])
+length(intersect(sig_genes_DESeq, sig_genes_edge))
+
+end_time <- Sys.time()
+print(end_time - start_time)
+```
+
+# Ribo-Seq 
+```{r}
+riboCounts = data.frame(riboCounts)
+rownames(sampleAnnotation2) = colnames(riboCounts)
+sampleAnnotation2$group <- ifelse(substr(sampleAnnotation2$group, 1, 1) %in% c("1", "4"),
+                                 paste0("X", sampleAnnotation2$group), 
+                                 sampleAnnotation2$group) 
+```
+
+```{r}
+group = factor(sampleAnnotation2$group)
+y = DGEList(counts = riboCounts, 
+        group = group,
+        genes = rownames(riboCounts))
+y$samples
+
+design <- model.matrix(~0+group)
+colnames(design) <- levels(group)
+keep <- filterByExpr(y, design)
+y <- y[keep, , keep.lib.sizes=FALSE]
+AveLogCPM <- aveLogCPM(y)
+hist(AveLogCPM)
+y <- calcNormFactors(y)
+y$samples
+
+for (i in 1:ncol(y)){
+  plotMD(y, column=i)
+  abline(h=0, col="red", lty=2, lwd=2)
+}
+```
+
+# contrast between day and dark; wild-type 
+```{r}
+start_time <- Sys.time()
+
+group = factor(sampleAnnotation2$group)
+y = DGEList(counts = riboCounts, 
+        group = group,
+        genes = rownames(riboCounts))
+#y$samples
+
+design <- model.matrix(~0+group)
+colnames(design) <- levels(group)
+keep <- filterByExpr(y, design)
+y <- y[keep, , keep.lib.sizes=FALSE]
+AveLogCPM <- aveLogCPM(y)
+#hist(AveLogCPM)
+y <- calcNormFactors(y)
+#y$samples
+
+y <- estimateDisp(y, design, robust=TRUE) 
+#y$samples
+#plotBCV(y) 
+
+fit <- glmQLFit(y, design, robust=TRUE) 
+#plotQLDisp(fit)
+#summary(fit$df.prior)
+
+day_vs_dark <- makeContrasts(COLENDDAY - COLEXDARK, levels = design) 
+tr <- glmTreat(fit, contrast=day_vs_dark, lfc=log2(1.5))
+topTags(tr)
+is.de <- decideTestsDGE(tr)
+summary(is.de)
+plotMD(tr, status=is.de)
+output = as.data.frame(topTags(tr, n = 10000))
+sum(output$FDR < 0.1)
+sig_genes_edge <- rownames(output[which(output$FDR < 0.1),])
+
+end_time <- Sys.time()
+print(end_time - start_time)
+```
+
+```{r}
+start_time <- Sys.time()
+
+DESeqDataSet = DESeqDataSetFromMatrix(
+    countData = riboCounts,
+    colData = sampleAnnotation2,
+    design = ~ group
+)
+
+DESeqDataSet = DESeq(
+  DESeqDataSet, 
+  parallel=FALSE
+  ) 
+
+DESeq_Results <- results(DESeqDataSet, contrast = c("group", "COLENDDAY", "COLEXDARK"))
+# indexes that all have a value 
+clean_DESeq_padj <- which(!is.na(DESeq_Results$padj))
+sum(DESeq_Results[clean_DESeq_padj, "padj"] <= 0.1)
+sum(DESeq_Results[clean_DESeq_padj, "padj"] <= 0.1) * 0.1
+sig_genes_DESeq <- rownames(DESeq_Results[which(clean_DESeq_padj <= 0.1)])
+length(intersect(sig_genes_DESeq, sig_genes_edge))
+
+end_time <- Sys.time()
+print(end_time - start_time)
+```
+
+# contrast between day and dark; 14B mutant 
+```{r}
+start_time <- Sys.time()
+
+day_vs_dark <- makeContrasts(X14BENDDAY - X14BEXDARK, levels = design) 
+
+tr <- glmTreat(fit, contrast=day_vs_dark, lfc=log2(1.5))
+topTags(tr)
+is.de <- decideTestsDGE(tr)
+summary(is.de)
+plotMD(tr, status=is.de)
+output = as.data.frame(topTags(tr, n = 10000))
+sum(output$FDR < 0.1)
+sig_genes_edge <- rownames(output[which(output$FDR < 0.1),])
+
+end_time <- Sys.time()
+print(end_time - start_time)
+```
+
+```{r}
+start_time <- Sys.time()
+
+DESeq_Results <- results(DESeqDataSet, contrast = c("group", "X14BENDDAY", "X14BEXDARK"))
+# indexes that all have a value 
+clean_DESeq_padj <- which(!is.na(DESeq_Results$padj))
+sum(DESeq_Results[clean_DESeq_padj, "padj"] <= 0.1)
+sum(DESeq_Results[clean_DESeq_padj, "padj"] <= 0.1) * 0.1
+sig_genes_DESeq <- rownames(DESeq_Results[which(clean_DESeq_padj <= 0.1)])
+length(intersect(sig_genes_DESeq, sig_genes_edge))
+
+end_time <- Sys.time()
+print(end_time - start_time)
+```
+
+# contrast between day and dark; 4G
+```{r}
+start_time <- Sys.time()
+
+day_vs_dark <- makeContrasts(X4GENDDAY - X4GEXDARK, levels = design) 
+
+tr <- glmTreat(fit, contrast=day_vs_dark, lfc=log2(1.5))
+topTags(tr)
+is.de <- decideTestsDGE(tr)
+summary(is.de)
+plotMD(tr, status=is.de)
+output = as.data.frame(topTags(tr, n = 10000))
+sum(output$FDR < 0.1)
+sig_genes_edge <- rownames(output[which(output$FDR < 0.1),])
+
+end_time <- Sys.time()
+print(end_time - start_time)
+```
+
+```{r}
+start_time <- Sys.time()
+
+DESeq_Results <- results(DESeqDataSet, contrast = c("group", "X4GENDDAY", "X4GEXDARK"))
+# indexes that all have a value 
+clean_DESeq_padj <- which(!is.na(DESeq_Results$padj))
+sum(DESeq_Results[clean_DESeq_padj, "padj"] <= 0.1)
+sum(DESeq_Results[clean_DESeq_padj, "padj"] <= 0.1) * 0.1
+sig_genes_DESeq <- rownames(DESeq_Results[which(clean_DESeq_padj <= 0.1)])
+length(intersect(sig_genes_DESeq, sig_genes_edge))
+
+end_time <- Sys.time()
+print(end_time - start_time)
+```
+
+# contrast between genotypes, day: COL and 14B
+```{r}
+start_time <- Sys.time()
+
+day_vs_dark <- makeContrasts(COLENDDAY - X14BENDDAY, levels = design) 
+
+tr <- glmTreat(fit, contrast=day_vs_dark, lfc=log2(1.5))
+topTags(tr)
+is.de <- decideTestsDGE(tr)
+summary(is.de)
+plotMD(tr, status=is.de)
+output = as.data.frame(topTags(tr, n = 10000))
+sum(output$FDR < 0.1)
+sig_genes_edge <- rownames(output[which(output$FDR < 0.1),])
+
+end_time <- Sys.time()
+print(end_time - start_time)
+```
+
+```{r}
+start_time <- Sys.time()
+
+DESeq_Results <- results(DESeqDataSet, contrast = c("group", "COLENDDAY", "X14BENDDAY"))
+# indexes that all have a value 
+clean_DESeq_padj <- which(!is.na(DESeq_Results$padj))
+sum(DESeq_Results[clean_DESeq_padj, "padj"] <= 0.1)
+sum(DESeq_Results[clean_DESeq_padj, "padj"] <= 0.1) * 0.1
+sig_genes_DESeq <- rownames(DESeq_Results[which(clean_DESeq_padj <= 0.1)])
+length(intersect(sig_genes_DESeq, sig_genes_edge))
+
+end_time <- Sys.time()
+print(end_time - start_time)
+```
+
+# contrast between genotypes, night: COL and 14B
+```{r}
+start_time <- Sys.time()
+
+day_vs_dark <- makeContrasts(COLEXDARK - X14BEXDARK, levels = design) 
+
+tr <- glmTreat(fit, contrast=day_vs_dark, lfc=log2(1.5))
+topTags(tr)
+is.de <- decideTestsDGE(tr)
+summary(is.de)
+plotMD(tr, status=is.de)
+output = as.data.frame(topTags(tr, n = 10000))
+sum(output$FDR < 0.1)
+sig_genes_edge <- rownames(output[which(output$FDR < 0.1),])
+
+end_time <- Sys.time()
+print(end_time - start_time)
+```
+
+```{r}
+start_time <- Sys.time()
+
+DESeq_Results <- results(DESeqDataSet, contrast = c("group", "COLEXDARK", "X14BEXDARK"))
+# indexes that all have a value 
+clean_DESeq_padj <- which(!is.na(DESeq_Results$padj))
+sum(DESeq_Results[clean_DESeq_padj, "padj"] <= 0.1)
+sum(DESeq_Results[clean_DESeq_padj, "padj"] <= 0.1) * 0.1
+sig_genes_DESeq <- rownames(DESeq_Results[which(clean_DESeq_padj <= 0.1)])
+length(intersect(sig_genes_DESeq, sig_genes_edge))
+
+end_time <- Sys.time()
+print(end_time - start_time)
+```
+
+# contrast between genotypes, day: COL and 4G
+```{r}
+start_time <- Sys.time()
+
+day_vs_dark <- makeContrasts(COLENDDAY - X4GENDDAY, levels = design) 
+
+tr <- glmTreat(fit, contrast=day_vs_dark, lfc=log2(1.5))
+topTags(tr)
+is.de <- decideTestsDGE(tr)
+summary(is.de)
+plotMD(tr, status=is.de)
+output = as.data.frame(topTags(tr, n = 10000))
+sum(output$FDR < 0.1)
+sig_genes_edge <- rownames(output[which(output$FDR < 0.1),])
+
+end_time <- Sys.time()
+print(end_time - start_time)
+```
+
+```{r}
+start_time <- Sys.time()
+
+DESeq_Results <- results(DESeqDataSet, contrast = c("group", "COLENDDAY", "X4GENDDAY"))
+# indexes that all have a value 
+clean_DESeq_padj <- which(!is.na(DESeq_Results$padj))
+sum(DESeq_Results[clean_DESeq_padj, "padj"] <= 0.1)
+sum(DESeq_Results[clean_DESeq_padj, "padj"] <= 0.1) * 0.1
+sig_genes_DESeq <- rownames(DESeq_Results[which(clean_DESeq_padj <= 0.1)])
+length(intersect(sig_genes_DESeq, sig_genes_edge))
+
+end_time <- Sys.time()
+print(end_time - start_time)
+```
+
+# contrast between genotypes, night: COL and 4G
+```{r}
+start_time <- Sys.time()
+
+day_vs_dark <- makeContrasts(COLEXDARK - X4GEXDARK, levels = design) 
+
+tr <- glmTreat(fit, contrast=day_vs_dark, lfc=log2(1.5))
+topTags(tr)
+is.de <- decideTestsDGE(tr)
+summary(is.de)
+plotMD(tr, status=is.de)
+output = as.data.frame(topTags(tr, n = 10000))
+sum(output$FDR < 0.1)
+sig_genes_edge <- rownames(output[which(output$FDR < 0.1),])
+
+end_time <- Sys.time()
+print(end_time - start_time)
+```
+
+```{r}
+start_time <- Sys.time()
+
+DESeq_Results <- results(DESeqDataSet, contrast = c("group", "COLEXDARK", "X4GEXDARK"))
+# indexes that all have a value 
+clean_DESeq_padj <- which(!is.na(DESeq_Results$padj))
+sum(DESeq_Results[clean_DESeq_padj, "padj"] <= 0.1)
+sum(DESeq_Results[clean_DESeq_padj, "padj"] <= 0.1) * 0.1
+sig_genes_DESeq <- rownames(DESeq_Results[which(clean_DESeq_padj <= 0.1)])
+length(intersect(sig_genes_DESeq, sig_genes_edge))
+
+end_time <- Sys.time()
+print(end_time - start_time)
+```
+
+# contrast between genotypes, day: 14B and 4G
+```{r}
+start_time <- Sys.time()
+
+day_vs_dark <- makeContrasts(X14BENDDAY - X4GENDDAY, levels = design) 
+
+tr <- glmTreat(fit, contrast=day_vs_dark, lfc=log2(1.5))
+topTags(tr)
+is.de <- decideTestsDGE(tr)
+summary(is.de)
+plotMD(tr, status=is.de)
+output = as.data.frame(topTags(tr, n = 10000))
+sum(output$FDR < 0.1)
+sig_genes_edge <- rownames(output[which(output$FDR < 0.1),])
+
+end_time <- Sys.time()
+print(end_time - start_time)
+```
+
+```{r}
+start_time <- Sys.time()
+
+DESeq_Results <- results(DESeqDataSet, contrast = c("group", "X14BENDDAY", "X4GENDDAY"))
+# indexes that all have a value 
+clean_DESeq_padj <- which(!is.na(DESeq_Results$padj))
+sum(DESeq_Results[clean_DESeq_padj, "padj"] <= 0.1)
+sum(DESeq_Results[clean_DESeq_padj, "padj"] <= 0.1) * 0.1
+sig_genes_DESeq <- rownames(DESeq_Results[which(clean_DESeq_padj <= 0.1)])
+length(intersect(sig_genes_DESeq, sig_genes_edge))
+
+end_time <- Sys.time()
+print(end_time - start_time)
+```
+
+# contrast between genotypes, night: 14B and 4G
+```{r}
+start_time <- Sys.time()
+
+day_vs_dark <- makeContrasts(X14BEXDARK - X4GEXDARK, levels = design) 
+
+tr <- glmTreat(fit, contrast=day_vs_dark, lfc=log2(1.5))
+topTags(tr)
+is.de <- decideTestsDGE(tr)
+summary(is.de)
+plotMD(tr, status=is.de)
+output = as.data.frame(topTags(tr, n = 10000))
+sum(output$FDR < 0.1)
+sig_genes_edge <- rownames(output[which(output$FDR < 0.1),])
+
+end_time <- Sys.time()
+print(end_time - start_time)
+```
+
+```{r}
+start_time <- Sys.time()
+
+DESeq_Results <- results(DESeqDataSet, contrast = c("group", "X14BEXDARK", "X4GEXDARK"))
+# indexes that all have a value 
+clean_DESeq_padj <- which(!is.na(DESeq_Results$padj))
+sum(DESeq_Results[clean_DESeq_padj, "padj"] <= 0.1)
+sum(DESeq_Results[clean_DESeq_padj, "padj"] <= 0.1) * 0.1
+sig_genes_DESeq <- rownames(DESeq_Results[which(clean_DESeq_padj <= 0.1)])
+length(intersect(sig_genes_DESeq, sig_genes_edge))
+
+end_time <- Sys.time()
+print(end_time - start_time)
+```
+
+
+
+
+

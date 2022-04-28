@@ -1,0 +1,797 @@
+﻿gene_ontology_primary_id,gene_ontology_name,gene
+GO:0009631,cold acclimation,AT1G36160
+GO:0009631,cold acclimation,AT1G76180
+GO:0009631,cold acclimation,AT2G21490
+GO:0009631,cold acclimation,AT3G50980
+GO:0009631,cold acclimation,AT4G04920
+GO:0009631,cold acclimation,AT2G42540
+GO:0009631,cold acclimation,AT1G56070
+GO:0009631,cold acclimation,AT5G67590
+GO:0009631,cold acclimation,AT1G74960
+GO:0009631,cold acclimation,AT4G16420
+GO:0009631,cold acclimation,AT1G29395
+GO:0009631,cold acclimation,AT2G15970
+GO:0009631,cold acclimation,AT2G38170
+GO:0009631,cold acclimation,AT4G29810
+GO:0009631,cold acclimation,AT1G20440
+GO:0009631,cold acclimation,AT1G20450
+GO:0009631,cold acclimation,AT3G50970
+GO:0009631,cold acclimation,AT5G66400
+GO:0009631,cold acclimation,AT4G25470
+GO:0009631,cold acclimation,AT5G59820
+GO:0009631,cold acclimation,AT1G10760
+GO:0009631,cold acclimation,AT4G15910
+GO:0009631,cold acclimation,AT3G26420
+GO:0009631,cold acclimation,AT4G13850
+GO:0009631,cold acclimation,AT4G04800
+GO:0009631,cold acclimation,AT4G25480
+GO:0009631,cold acclimation,AT4G25490
+GO:0009631,cold acclimation,AT1G29390
+GO:0009631,cold acclimation,AT4G36020
+GO:0009631,cold acclimation,AT4G38680
+GO:0009631,cold acclimation,AT2G17870
+GO:0009631,cold acclimation,AT1G43620
+GO:0009631,cold acclimation,AT3G07020
+GO:0009631,cold acclimation,AT5G54590
+GO:0009631,cold acclimation,AT4G12470
+GO:0009631,cold acclimation,AT5G15960
+GO:0009631,cold acclimation,AT1G77490
+GO:0009631,cold acclimation,AT3G53460
+GO:0009631,cold acclimation,AT4G24770
+GO:0009631,cold acclimation,AT1G28520
+GO:0009631,cold acclimation,AT4G08500
+GO:0009631,cold acclimation,AT1G11760
+GO:0009631,cold acclimation,AT3G04740
+GO:0009631,cold acclimation,AT2G42530
+GO:0009631,cold acclimation,AT5G38480
+GO:0009631,cold acclimation,AT3G55580
+GO:0009631,cold acclimation,AT1G19120
+GO:0009631,cold acclimation,AT3G14080
+GO:0009631,cold acclimation,AT5G50950
+GO:0018298,protein-chromophore linkage,AT1G09570
+GO:0018298,protein-chromophore linkage,AT1G15820
+GO:0018298,protein-chromophore linkage,AT1G19150
+GO:0018298,protein-chromophore linkage,AT1G29930
+GO:0018298,protein-chromophore linkage,AT1G45474
+GO:0018298,protein-chromophore linkage,AT1G61520
+GO:0018298,protein-chromophore linkage,AT1G68050
+GO:0018298,protein-chromophore linkage,AT2G02710
+GO:0018298,protein-chromophore linkage,AT2G05100
+GO:0018298,protein-chromophore linkage,AT2G18790
+GO:0018298,protein-chromophore linkage,AT2G18915
+GO:0018298,protein-chromophore linkage,AT2G34420
+GO:0018298,protein-chromophore linkage,AT2G34430
+GO:0018298,protein-chromophore linkage,AT2G40100
+GO:0018298,protein-chromophore linkage,AT2G47590
+GO:0018298,protein-chromophore linkage,AT3G08940
+GO:0018298,protein-chromophore linkage,AT3G27690
+GO:0018298,protein-chromophore linkage,AT3G45780
+GO:0018298,protein-chromophore linkage,AT3G47470
+GO:0018298,protein-chromophore linkage,AT3G54890
+GO:0018298,protein-chromophore linkage,AT3G61470
+GO:0018298,protein-chromophore linkage,AT4G10340
+GO:0018298,protein-chromophore linkage,AT4G18130
+GO:0018298,protein-chromophore linkage,AT5G01530
+GO:0018298,protein-chromophore linkage,AT5G24850
+GO:0018298,protein-chromophore linkage,AT5G35840
+GO:0018298,protein-chromophore linkage,AT5G54270
+GO:0018298,protein-chromophore linkage,AT5G57360
+GO:0018298,protein-chromophore linkage,AT5G58140
+GO:0018298,protein-chromophore linkage,AT5G63860
+GO:0034285,response to disaccharide,AT5G44110
+GO:0034285,response to disaccharide,AT5G65420
+GO:0034285,response to disaccharide,AT5G20830
+GO:0034285,response to disaccharide,AT5G45890
+GO:0034285,response to disaccharide,AT3G06850
+GO:0034285,response to disaccharide,AT3G13450
+GO:0034285,response to disaccharide,AT2G22490
+GO:0034285,response to disaccharide,AT4G34160
+GO:0034285,response to disaccharide,AT1G67070
+GO:0034285,response to disaccharide,AT5G03730
+GO:0034285,response to disaccharide,AT1G69780
+GO:0034285,response to disaccharide,AT1G21400
+GO:0034285,response to disaccharide,AT5G03840
+GO:0034285,response to disaccharide,AT4G38630
+GO:0034285,response to disaccharide,AT1G42970
+GO:0034285,response to disaccharide,AT2G47400
+GO:0034285,response to disaccharide,AT3G26650
+GO:0034285,response to disaccharide,AT3G62410
+GO:0034285,response to disaccharide,AT1G10840
+GO:0034285,response to disaccharide,AT3G54320
+GO:0034285,response to disaccharide,AT2G30470
+GO:0034285,response to disaccharide,AT2G01830
+GO:0034285,response to disaccharide,AT5G08790
+GO:0034285,response to disaccharide,AT2G24150
+GO:0034285,response to disaccharide,AT4G30850
+GO:0034285,response to disaccharide,AT4G37680
+GO:0034285,response to disaccharide,AT4G38320
+GO:0034285,response to disaccharide,AT5G20270
+GO:0034285,response to disaccharide,AT1G20950
+GO:0034285,response to disaccharide,AT1G28330
+GO:0034285,response to disaccharide,AT1G61800
+GO:0034285,response to disaccharide,AT1G74670
+GO:0034285,response to disaccharide,AT2G28900
+GO:0034285,response to disaccharide,AT3G47340
+GO:0034285,response to disaccharide,AT4G37220
+GO:0034285,response to disaccharide,AT5G41670
+GO:0034285,response to disaccharide,AT3G11220
+GO:0034285,response to disaccharide,AT1G31930
+GO:0034285,response to disaccharide,AT2G23460
+GO:0034285,response to disaccharide,AT4G34390
+GO:0034285,response to disaccharide,AT1G08830
+GO:0034285,response to disaccharide,AT2G28190
+GO:0034285,response to disaccharide,AT1G77120
+GO:0034285,response to disaccharide,AT2G39990
+GO:0034285,response to disaccharide,AT1G72320
+GO:0034285,response to disaccharide,AT1G16880
+GO:0034285,response to disaccharide,AT3G12700
+GO:0034285,response to disaccharide,AT1G15440
+GO:0034285,response to disaccharide,AT3G16690
+GO:0034285,response to disaccharide,AT3G04120
+GO:0034285,response to disaccharide,AT5G04140
+GO:0034285,response to disaccharide,AT4G01900
+GO:0034285,response to disaccharide,AT3G52430
+GO:0033013,tetrapyrrole metabolic process,AT2G26540
+GO:0033013,tetrapyrrole metabolic process,AT5G40850
+GO:0033013,tetrapyrrole metabolic process,AT5G63290
+GO:0033013,tetrapyrrole metabolic process,AT1G03475
+GO:0033013,tetrapyrrole metabolic process,AT1G09940
+GO:0033013,tetrapyrrole metabolic process,AT1G58290
+GO:0033013,tetrapyrrole metabolic process,AT1G69740
+GO:0033013,tetrapyrrole metabolic process,AT2G40490
+GO:0033013,tetrapyrrole metabolic process,AT3G14930
+GO:0033013,tetrapyrrole metabolic process,AT3G48730
+GO:0033013,tetrapyrrole metabolic process,AT4G01690
+GO:0033013,tetrapyrrole metabolic process,AT4G03205
+GO:0033013,tetrapyrrole metabolic process,AT5G08280
+GO:0033013,tetrapyrrole metabolic process,AT5G14220
+GO:0033013,tetrapyrrole metabolic process,AT5G63570
+GO:0033013,tetrapyrrole metabolic process,AT2G30390
+GO:0033013,tetrapyrrole metabolic process,AT2G44520
+GO:0033013,tetrapyrrole metabolic process,AT3G21200
+GO:0033013,tetrapyrrole metabolic process,AT5G26030
+GO:0033013,tetrapyrrole metabolic process,AT5G56090
+GO:0033013,tetrapyrrole metabolic process,AT1G69720
+GO:0033013,tetrapyrrole metabolic process,AT2G26550
+GO:0033013,tetrapyrrole metabolic process,AT2G26670
+GO:0033013,tetrapyrrole metabolic process,AT1G03630
+GO:0033013,tetrapyrrole metabolic process,AT1G08520
+GO:0033013,tetrapyrrole metabolic process,AT1G44446
+GO:0033013,tetrapyrrole metabolic process,AT1G74470
+GO:0033013,tetrapyrrole metabolic process,AT3G51820
+GO:0033013,tetrapyrrole metabolic process,AT3G56940
+GO:0033013,tetrapyrrole metabolic process,AT4G18480
+GO:0033013,tetrapyrrole metabolic process,AT4G25080
+GO:0033013,tetrapyrrole metabolic process,AT4G27440
+GO:0033013,tetrapyrrole metabolic process,AT5G13630
+GO:0033013,tetrapyrrole metabolic process,AT5G16440
+GO:0033013,tetrapyrrole metabolic process,AT5G18660
+GO:0033013,tetrapyrrole metabolic process,AT5G45930
+GO:0033013,tetrapyrrole metabolic process,AT1G19670
+GO:0033013,tetrapyrrole metabolic process,AT3G44880
+GO:0033013,tetrapyrrole metabolic process,AT4G37000
+GO:0033013,tetrapyrrole metabolic process,AT5G43860
+GO:0033013,tetrapyrrole metabolic process,AT1G50170
+GO:0033013,tetrapyrrole metabolic process,AT4G15560
+GO:0033013,tetrapyrrole metabolic process,AT3G14110
+GO:0033013,tetrapyrrole metabolic process,AT2G20180
+GO:0033013,tetrapyrrole metabolic process,AT1G10670
+GO:0033013,tetrapyrrole metabolic process,AT3G59400
+GO:0033013,tetrapyrrole metabolic process,AT1G63970
+GO:0033013,tetrapyrrole metabolic process,AT1G08550
+GO:0033013,tetrapyrrole metabolic process,AT4G32770
+GO:0033013,tetrapyrrole metabolic process,AT5G01410
+GO:0033013,tetrapyrrole metabolic process,AT5G43430
+GO:0033013,tetrapyrrole metabolic process,AT4G22920
+GO:0033013,tetrapyrrole metabolic process,AT3G01910
+GO:0033013,tetrapyrrole metabolic process,AT1G78600
+GO:0033013,tetrapyrrole metabolic process,AT5G13800
+GO:0033013,tetrapyrrole metabolic process,AT4G13250
+GO:0033013,tetrapyrrole metabolic process,AT5G04900
+GO:0033013,tetrapyrrole metabolic process,AT2G47770
+GO:0033013,tetrapyrrole metabolic process,AT1G04620
+GO:0033013,tetrapyrrole metabolic process,AT4G01660
+GO:0033013,tetrapyrrole metabolic process,AT4G31390
+GO:0033013,tetrapyrrole metabolic process,AT2G20890
+GO:0033013,tetrapyrrole metabolic process,AT2G40400
+GO:0033013,tetrapyrrole metabolic process,AT5G38520
+GO:0033013,tetrapyrrole metabolic process,AT5G54190
+GO:0033013,tetrapyrrole metabolic process,AT3G02780
+GO:0033013,tetrapyrrole metabolic process,AT4G27430
+GO:0033013,tetrapyrrole metabolic process,AT3G09150
+GO:0033013,tetrapyrrole metabolic process,AT2G36680
+GO:0006081,cellular aldehyde metabolic process,AT1G44170
+GO:0006081,cellular aldehyde metabolic process,AT3G66658
+GO:0006081,cellular aldehyde metabolic process,AT4G34240
+GO:0006081,cellular aldehyde metabolic process,AT4G36250
+GO:0006081,cellular aldehyde metabolic process,AT2G05710
+GO:0006081,cellular aldehyde metabolic process,AT2G22780
+GO:0006081,cellular aldehyde metabolic process,AT3G21720
+GO:0006081,cellular aldehyde metabolic process,AT4G26970
+GO:0006081,cellular aldehyde metabolic process,AT5G03860
+GO:0006081,cellular aldehyde metabolic process,AT5G09660
+GO:0006081,cellular aldehyde metabolic process,AT1G09420
+GO:0006081,cellular aldehyde metabolic process,AT1G71170
+GO:0006081,cellular aldehyde metabolic process,AT2G01140
+GO:0006081,cellular aldehyde metabolic process,AT2G21330
+GO:0006081,cellular aldehyde metabolic process,AT2G36460
+GO:0006081,cellular aldehyde metabolic process,AT3G02360
+GO:0006081,cellular aldehyde metabolic process,AT3G27300
+GO:0006081,cellular aldehyde metabolic process,AT3G52930
+GO:0006081,cellular aldehyde metabolic process,AT3G55440
+GO:0006081,cellular aldehyde metabolic process,AT4G26520
+GO:0006081,cellular aldehyde metabolic process,AT4G38970
+GO:0006081,cellular aldehyde metabolic process,AT5G03690
+GO:0006081,cellular aldehyde metabolic process,AT5G13420
+GO:0006081,cellular aldehyde metabolic process,AT5G57655
+GO:0006081,cellular aldehyde metabolic process,AT1G71100
+GO:0006081,cellular aldehyde metabolic process,AT2G01290
+GO:0006081,cellular aldehyde metabolic process,AT3G04790
+GO:0006081,cellular aldehyde metabolic process,AT5G44520
+GO:0006081,cellular aldehyde metabolic process,AT5G61410
+GO:0006081,cellular aldehyde metabolic process,AT5G37850
+GO:0006081,cellular aldehyde metabolic process,AT1G06130
+GO:0006081,cellular aldehyde metabolic process,AT1G53580
+GO:0006081,cellular aldehyde metabolic process,AT2G31350
+GO:0006081,cellular aldehyde metabolic process,AT2G43430
+GO:0006081,cellular aldehyde metabolic process,AT3G10850
+GO:0006081,cellular aldehyde metabolic process,AT1G63970
+GO:0006081,cellular aldehyde metabolic process,AT2G02500
+GO:0006081,cellular aldehyde metabolic process,AT2G26930
+GO:0006081,cellular aldehyde metabolic process,AT4G34350
+GO:0006081,cellular aldehyde metabolic process,AT2G38210
+GO:0006081,cellular aldehyde metabolic process,AT2G38230
+GO:0006081,cellular aldehyde metabolic process,AT3G16050
+GO:0006081,cellular aldehyde metabolic process,AT5G01410
+GO:0006081,cellular aldehyde metabolic process,AT5G60540
+GO:0006081,cellular aldehyde metabolic process,AT1G02205
+GO:0006081,cellular aldehyde metabolic process,AT2G41530
+GO:0006081,cellular aldehyde metabolic process,AT5G62790
+GO:0006081,cellular aldehyde metabolic process,AT4G15560
+GO:0006081,cellular aldehyde metabolic process,AT5G43940
+GO:0006081,cellular aldehyde metabolic process,AT3G16910
+GO:0006081,cellular aldehyde metabolic process,AT5G60600
+GO:0006081,cellular aldehyde metabolic process,AT4G14850
+GO:0006081,cellular aldehyde metabolic process,AT5G49970
+GO:0006081,cellular aldehyde metabolic process,AT5G42890
+GO:0006081,cellular aldehyde metabolic process,AT5G06580
+GO:0006081,cellular aldehyde metabolic process,AT2G21170
+GO:0006081,cellular aldehyde metabolic process,AT5G53580
+GO:0006081,cellular aldehyde metabolic process,AT1G53280
+GO:0006081,cellular aldehyde metabolic process,AT3G02720
+GO:0006081,cellular aldehyde metabolic process,AT3G14990
+GO:0006081,cellular aldehyde metabolic process,AT1G08110
+GO:0006081,cellular aldehyde metabolic process,AT1G11840
+GO:0006081,cellular aldehyde metabolic process,AT1G67280
+GO:0006090,pyruvate metabolic process,AT1G01090
+GO:0006090,pyruvate metabolic process,AT1G24180
+GO:0006090,pyruvate metabolic process,AT1G59900
+GO:0006090,pyruvate metabolic process,AT5G50850
+GO:0006090,pyruvate metabolic process,AT1G79750
+GO:0006090,pyruvate metabolic process,AT2G13560
+GO:0006090,pyruvate metabolic process,AT2G19900
+GO:0006090,pyruvate metabolic process,AT4G00570
+GO:0006090,pyruvate metabolic process,AT5G11670
+GO:0006090,pyruvate metabolic process,AT1G09780
+GO:0006090,pyruvate metabolic process,AT1G12000
+GO:0006090,pyruvate metabolic process,AT1G12900
+GO:0006090,pyruvate metabolic process,AT1G13440
+GO:0006090,pyruvate metabolic process,AT1G16300
+GO:0006090,pyruvate metabolic process,AT1G18270
+GO:0006090,pyruvate metabolic process,AT1G30120
+GO:0006090,pyruvate metabolic process,AT1G32440
+GO:0006090,pyruvate metabolic process,AT1G34430
+GO:0006090,pyruvate metabolic process,AT1G42970
+GO:0006090,pyruvate metabolic process,AT1G47840
+GO:0006090,pyruvate metabolic process,AT1G50460
+GO:0006090,pyruvate metabolic process,AT1G54220
+GO:0006090,pyruvate metabolic process,AT1G56190
+GO:0006090,pyruvate metabolic process,AT1G74030
+GO:0006090,pyruvate metabolic process,AT1G76550
+GO:0006090,pyruvate metabolic process,AT1G79530
+GO:0006090,pyruvate metabolic process,AT1G79550
+GO:0006090,pyruvate metabolic process,AT2G01140
+GO:0006090,pyruvate metabolic process,AT2G17270
+GO:0006090,pyruvate metabolic process,AT2G19860
+GO:0006090,pyruvate metabolic process,AT2G21170
+GO:0006090,pyruvate metabolic process,AT2G21330
+GO:0006090,pyruvate metabolic process,AT2G22480
+GO:0006090,pyruvate metabolic process,AT2G29560
+GO:0006090,pyruvate metabolic process,AT2G34590
+GO:0006090,pyruvate metabolic process,AT2G36460
+GO:0006090,pyruvate metabolic process,AT2G36530
+GO:0006090,pyruvate metabolic process,AT2G36580
+GO:0006090,pyruvate metabolic process,AT3G04120
+GO:0006090,pyruvate metabolic process,AT3G08590
+GO:0006090,pyruvate metabolic process,AT3G12780
+GO:0006090,pyruvate metabolic process,AT3G13930
+GO:0006090,pyruvate metabolic process,AT3G20040
+GO:0006090,pyruvate metabolic process,AT3G22960
+GO:0006090,pyruvate metabolic process,AT3G25860
+GO:0006090,pyruvate metabolic process,AT3G26650
+GO:0006090,pyruvate metabolic process,AT3G49160
+GO:0006090,pyruvate metabolic process,AT3G52200
+GO:0006090,pyruvate metabolic process,AT3G52930
+GO:0006090,pyruvate metabolic process,AT3G52990
+GO:0006090,pyruvate metabolic process,AT3G55440
+GO:0006090,pyruvate metabolic process,AT4G24620
+GO:0006090,pyruvate metabolic process,AT4G26270
+GO:0006090,pyruvate metabolic process,AT4G26520
+GO:0006090,pyruvate metabolic process,AT4G29130
+GO:0006090,pyruvate metabolic process,AT4G29220
+GO:0006090,pyruvate metabolic process,AT4G32840
+GO:0006090,pyruvate metabolic process,AT4G38970
+GO:0006090,pyruvate metabolic process,AT5G08570
+GO:0006090,pyruvate metabolic process,AT5G42740
+GO:0006090,pyruvate metabolic process,AT5G47810
+GO:0006090,pyruvate metabolic process,AT5G52920
+GO:0006090,pyruvate metabolic process,AT5G56350
+GO:0006090,pyruvate metabolic process,AT5G56630
+GO:0006090,pyruvate metabolic process,AT5G61580
+GO:0006090,pyruvate metabolic process,AT5G63680
+GO:0006090,pyruvate metabolic process,AT1G63970
+GO:0006090,pyruvate metabolic process,AT2G02500
+GO:0006090,pyruvate metabolic process,AT2G26930
+GO:0006090,pyruvate metabolic process,AT4G34350
+GO:0006090,pyruvate metabolic process,AT5G62790
+GO:0006090,pyruvate metabolic process,AT3G16950
+GO:0006090,pyruvate metabolic process,AT4G15560
+GO:0006090,pyruvate metabolic process,AT5G60600
+GO:0006090,pyruvate metabolic process,AT4G14850
+GO:0006090,pyruvate metabolic process,AT3G62130
+GO:0006090,pyruvate metabolic process,AT1G17410
+GO:0006090,pyruvate metabolic process,AT4G11010
+GO:0006090,pyruvate metabolic process,AT4G23900
+GO:0006090,pyruvate metabolic process,AT5G63310
+GO:0006090,pyruvate metabolic process,AT4G09320
+GO:0006090,pyruvate metabolic process,AT5G59440
+GO:0006090,pyruvate metabolic process,AT3G23580
+GO:0006090,pyruvate metabolic process,AT3G27060
+GO:0006090,pyruvate metabolic process,AT4G25280
+GO:0006090,pyruvate metabolic process,AT5G60340
+GO:0006865,amino acid transport,AT1G05940
+GO:0006865,amino acid transport,AT1G17120
+GO:0006865,amino acid transport,AT1G58030
+GO:0006865,amino acid transport,AT1G77380
+GO:0006865,amino acid transport,AT1G77690
+GO:0006865,amino acid transport,AT2G01170
+GO:0006865,amino acid transport,AT2G21050
+GO:0006865,amino acid transport,AT2G34960
+GO:0006865,amino acid transport,AT2G38120
+GO:0006865,amino acid transport,AT2G42005
+GO:0006865,amino acid transport,AT3G03720
+GO:0006865,amino acid transport,AT3G13620
+GO:0006865,amino acid transport,AT3G19553
+GO:0006865,amino acid transport,AT4G21120
+GO:0006865,amino acid transport,AT4G35180
+GO:0006865,amino acid transport,AT5G01240
+GO:0006865,amino acid transport,AT5G04770
+GO:0006865,amino acid transport,AT5G23810
+GO:0006865,amino acid transport,AT5G36940
+GO:0006865,amino acid transport,AT5G65990
+GO:0006865,amino acid transport,AT1G58360
+GO:0006865,amino acid transport,AT1G01070
+GO:0006865,amino acid transport,AT2G39510
+GO:0006865,amino acid transport,AT2G40900
+GO:0006865,amino acid transport,AT4G01430
+GO:0006865,amino acid transport,AT1G44100
+GO:0006865,amino acid transport,AT5G09220
+GO:0006865,amino acid transport,AT5G46800
+GO:0006865,amino acid transport,AT1G24400
+GO:0006865,amino acid transport,AT1G25530
+GO:0006865,amino acid transport,AT1G47670
+GO:0006865,amino acid transport,AT1G80510
+GO:0006865,amino acid transport,AT2G24762
+GO:0006865,amino acid transport,AT2G36590
+GO:0006865,amino acid transport,AT2G39890
+GO:0006865,amino acid transport,AT2G40420
+GO:0006865,amino acid transport,AT2G41190
+GO:0006865,amino acid transport,AT3G11900
+GO:0006865,amino acid transport,AT3G30390
+GO:0006865,amino acid transport,AT3G55740
+GO:0006865,amino acid transport,AT3G56200
+GO:0006865,amino acid transport,AT4G38250
+GO:0006865,amino acid transport,AT5G02170
+GO:0006865,amino acid transport,AT5G02180
+GO:0006865,amino acid transport,AT5G15240
+GO:0006865,amino acid transport,AT5G19500
+GO:0006865,amino acid transport,AT5G40780
+GO:0006865,amino acid transport,AT5G41800
+GO:0006865,amino acid transport,AT5G57685
+GO:0006865,amino acid transport,AT1G21890
+GO:0006865,amino acid transport,AT2G37450
+GO:0006865,amino acid transport,AT2G37460
+GO:0006865,amino acid transport,AT4G08290
+GO:0006865,amino acid transport,AT4G08300
+GO:0006865,amino acid transport,AT5G13670
+GO:0006865,amino acid transport,AT5G49630
+GO:0006865,amino acid transport,AT5G64290
+GO:0006865,amino acid transport,AT4G31730
+GO:0006865,amino acid transport,AT1G08230
+GO:0006865,amino acid transport,AT1G79900
+GO:0006865,amino acid transport,AT1G44800
+GO:0006865,amino acid transport,AT5G63850
+GO:0055081,anion homeostasis,AT5G41080
+GO:0055081,anion homeostasis,AT5G43300
+GO:0055081,anion homeostasis,AT1G21890
+GO:0055081,anion homeostasis,AT2G37450
+GO:0055081,anion homeostasis,AT2G37460
+GO:0055081,anion homeostasis,AT2G39510
+GO:0055081,anion homeostasis,AT4G08290
+GO:0055081,anion homeostasis,AT4G08300
+GO:0055081,anion homeostasis,AT5G13670
+GO:0055081,anion homeostasis,AT3G17790
+GO:0055081,anion homeostasis,AT5G42810
+GO:0055081,anion homeostasis,AT5G26240
+GO:0055081,anion homeostasis,AT5G04340
+GO:0055081,anion homeostasis,AT2G33770
+GO:0055081,anion homeostasis,AT1G16300
+GO:0055081,anion homeostasis,AT1G79530
+GO:0055081,anion homeostasis,AT5G34850
+GO:0055081,anion homeostasis,AT2G41560
+GO:0055081,anion homeostasis,AT4G24160
+GO:0055081,anion homeostasis,AT4G28610
+GO:0055081,anion homeostasis,AT1G66970
+GO:0055081,anion homeostasis,AT3G02040
+GO:0055081,anion homeostasis,AT2G38170
+GO:0055081,anion homeostasis,AT3G51860
+GO:0055081,anion homeostasis,AT2G13100
+GO:0055081,anion homeostasis,AT3G47420
+GO:0055081,anion homeostasis,AT4G25220
+GO:0055081,anion homeostasis,AT3G09770
+GO:0055081,anion homeostasis,AT1G44800
+GO:0055081,anion homeostasis,AT5G58070
+GO:0055081,anion homeostasis,AT1G58030
+GO:0055081,anion homeostasis,AT1G42550
+GO:0055081,anion homeostasis,AT1G07240
+GO:0055081,anion homeostasis,AT1G63010
+GO:0055081,anion homeostasis,AT1G68670
+GO:0055081,anion homeostasis,AT1G68570
+GO:0055081,anion homeostasis,AT1G36370
+GO:0055081,anion homeostasis,AT3G02610
+GO:0055081,anion homeostasis,AT5G16230
+GO:0010193,response to ozone,AT3G10985
+GO:0010193,response to ozone,AT2G46370
+GO:0010193,response to ozone,AT1G32230
+GO:0010193,response to ozone,AT1G51400
+GO:0010193,response to ozone,AT3G17800
+GO:0010193,response to ozone,AT3G05970
+GO:0010193,response to ozone,AT5G27600
+GO:0010193,response to ozone,AT1G19570
+GO:0010193,response to ozone,AT2G06050
+GO:0010193,response to ozone,AT2G39770
+GO:0010193,response to ozone,AT4G23100
+GO:0010193,response to ozone,AT5G55120
+GO:0010193,response to ozone,AT4G12720
+GO:0010193,response to ozone,AT3G06110
+GO:0010193,response to ozone,AT5G49570
+GO:0010193,response to ozone,AT1G12480
+GO:0010193,response to ozone,AT1G15520
+GO:0010193,response to ozone,AT1G72520
+GO:0010193,response to ozone,AT3G02840
+GO:0010193,response to ozone,AT3G47450
+GO:0010193,response to ozone,AT5G42380
+GO:0010193,response to ozone,AT1G08830
+GO:0010193,response to ozone,AT1G53130
+GO:0010193,response to ozone,AT1G70520
+GO:0010193,response to ozone,AT3G23400
+GO:0010193,response to ozone,AT1G11650
+GO:0010193,response to ozone,AT4G23810
+GO:0010193,response to ozone,AT5G24110
+GO:0010193,response to ozone,AT4G00860
+GO:0010193,response to ozone,AT4G25100
+GO:0010193,response to ozone,AT2G28190
+GO:0010193,response to ozone,AT5G18100
+GO:0071495,cellular response to endogenous stimulus,AT3G62680
+GO:0071495,cellular response to endogenous stimulus,AT2G46370
+GO:0071495,cellular response to endogenous stimulus,AT5G54500
+GO:0071495,cellular response to endogenous stimulus,AT4G39403
+GO:0071495,cellular response to endogenous stimulus,AT1G10930
+GO:0071495,cellular response to endogenous stimulus,AT3G13300
+GO:0071495,cellular response to endogenous stimulus,AT1G12240
+GO:0071495,cellular response to endogenous stimulus,AT1G62660
+GO:0071495,cellular response to endogenous stimulus,AT5G13790
+GO:0071495,cellular response to endogenous stimulus,AT1G05200
+GO:0071495,cellular response to endogenous stimulus,AT1G28560
+GO:0071495,cellular response to endogenous stimulus,AT2G26300
+GO:0071495,cellular response to endogenous stimulus,AT4G23570
+GO:0071495,cellular response to endogenous stimulus,AT5G10520
+GO:0071495,cellular response to endogenous stimulus,AT3G07360
+GO:0071495,cellular response to endogenous stimulus,AT1G03880
+GO:0071495,cellular response to endogenous stimulus,AT4G28520
+GO:0071495,cellular response to endogenous stimulus,AT5G44120
+GO:0071495,cellular response to endogenous stimulus,AT3G15356
+GO:0071495,cellular response to endogenous stimulus,AT4G36830
+GO:0071495,cellular response to endogenous stimulus,AT5G54060
+GO:0071495,cellular response to endogenous stimulus,AT1G21410
+GO:0071495,cellular response to endogenous stimulus,AT4G32040
+GO:0071495,cellular response to endogenous stimulus,AT1G59870
+GO:0071495,cellular response to endogenous stimulus,AT3G53480
+GO:0071495,cellular response to endogenous stimulus,AT1G21140
+GO:0071495,cellular response to endogenous stimulus,AT1G49820
+GO:0071495,cellular response to endogenous stimulus,AT1G76800
+GO:0071495,cellular response to endogenous stimulus,AT2G05830
+GO:0071495,cellular response to endogenous stimulus,AT2G28160
+GO:0071495,cellular response to endogenous stimulus,AT3G08040
+GO:0071495,cellular response to endogenous stimulus,AT3G25190
+GO:0071495,cellular response to endogenous stimulus,AT3G53280
+GO:0071495,cellular response to endogenous stimulus,AT4G19690
+GO:0071495,cellular response to endogenous stimulus,AT5G04950
+GO:0071495,cellular response to endogenous stimulus,AT5G36890
+GO:0071495,cellular response to endogenous stimulus,AT5G55620
+GO:0071495,cellular response to endogenous stimulus,AT1G05680
+GO:0071495,cellular response to endogenous stimulus,AT5G13170
+GO:0071495,cellular response to endogenous stimulus,AT1G18080
+GO:0071495,cellular response to endogenous stimulus,AT1G48630
+GO:0071495,cellular response to endogenous stimulus,AT3G18130
+GO:0071495,cellular response to endogenous stimulus,AT3G55620
+GO:0071495,cellular response to endogenous stimulus,AT1G72360
+GO:0071495,cellular response to endogenous stimulus,AT2G41230
+GO:0071495,cellular response to endogenous stimulus,AT5G28770
+GO:0071495,cellular response to endogenous stimulus,AT2G05070
+GO:0071495,cellular response to endogenous stimulus,AT4G21540
+GO:0071495,cellular response to endogenous stimulus,AT1G71930
+GO:0071495,cellular response to endogenous stimulus,AT3G59900
+GO:0071495,cellular response to endogenous stimulus,AT1G64625
+GO:0071495,cellular response to endogenous stimulus,AT3G16857
+GO:0071495,cellular response to endogenous stimulus,AT4G16110
+GO:0071495,cellular response to endogenous stimulus,AT4G31920
+GO:0071495,cellular response to endogenous stimulus,AT1G19350
+GO:0071495,cellular response to endogenous stimulus,AT5G17800
+GO:0071495,cellular response to endogenous stimulus,AT4G30290
+GO:0071495,cellular response to endogenous stimulus,AT5G48070
+GO:0071495,cellular response to endogenous stimulus,AT1G79200
+GO:0071495,cellular response to endogenous stimulus,AT1G61660
+GO:0071495,cellular response to endogenous stimulus,AT5G58787
+GO:0071495,cellular response to endogenous stimulus,AT2G23070
+GO:0071495,cellular response to endogenous stimulus,AT4G32330
+GO:0071495,cellular response to endogenous stimulus,AT2G43140
+GO:0071495,cellular response to endogenous stimulus,AT3G53970
+GO:0071495,cellular response to endogenous stimulus,AT4G00830
+GO:0071495,cellular response to endogenous stimulus,AT1G22530
+GO:0071495,cellular response to endogenous stimulus,AT1G30690
+GO:0071495,cellular response to endogenous stimulus,AT3G51670
+GO:0071495,cellular response to endogenous stimulus,AT4G09160
+GO:0071495,cellular response to endogenous stimulus,AT2G32800
+GO:0071495,cellular response to endogenous stimulus,AT1G05010
+GO:0071495,cellular response to endogenous stimulus,AT1G12010
+GO:0071495,cellular response to endogenous stimulus,AT1G62380
+GO:0071495,cellular response to endogenous stimulus,AT2G19590
+GO:0071495,cellular response to endogenous stimulus,AT3G03990
+GO:0071495,cellular response to endogenous stimulus,AT3G08850
+GO:0071495,cellular response to endogenous stimulus,AT5G01770
+GO:0071495,cellular response to endogenous stimulus,AT2G33580
+GO:0071495,cellular response to endogenous stimulus,AT3G21630
+GO:0071495,cellular response to endogenous stimulus,AT5G60300
+GO:0071495,cellular response to endogenous stimulus,AT5G66850
+GO:0006952,defense response,AT5G36910
+GO:0044255,cellular lipid metabolic process,AT4G15110
+GO:0005975,carbohydrate metabolic process,AT3G18080
+GO:0071482,cellular response to light stimulus,AT3G24190
+GO:0009409,response to cold,AT4G17090
+GO:0009082,branched-chain amino acid biosynthetic process,AT3G48560
+GO:0009738,abscisic acid-activated signaling pathway,AT2G38310
+GO:0006808,regulation of nitrogen utilization,AT4G01900
+GO:0009737,response to abscisic acid,AT5G02240
+GO:0010218,response to far red light,AT4G14130
+GO:0045892,negative regulation of transcription,AT1G80840
+GO:0006457,protein folding,AT3G11830
+GO:0009416,response to light stimulus,AT5G49730
+GO:0018119,peptidyl-cysteine S-nitrosylation,AT5G20630
+GO:0006520,cellular amino acid metabolic process,AT1G62960
+GO:0005975,carbohydrate metabolic process,AT2G28470
+GO:0030154,cell differentiation,AT1G71030
+GO:0015995,chlorophyll biosynthetic process,AT4G27440
+GO:0006520,cellular amino acid metabolic process,AT1G76990
+GO:0009737,response to abscisic acid,AT5G03230
+GO:0009751,response to salicylic acid,AT4G05320
+GO:0009409,response to cold,AT5G13650
+GO:0009740,gibberellic acid mediated signaling pathway,AT1G74670
+GO:0048589,developmental growth,AT5G18670
+GO:0009751,response to salicylic acid,AT4G23810
+GO:0009736,cytokinin-activated signaling pathway,AT5G02810
+GO:0000463,maturation of LSU-rRNA from tricistronic rRNA transcript,AT5G14520
+GO:0007623,circadian rhythm,AT3G26740
+GO:0009642,response to light intensity,AT2G45600
+GO:0009416,response to light stimulus,AT5G37360
+GO:0003674,molecular_function,AT2G41990
+GO:0009834,plant-type secondary cell wall biogenesis,AT5G44130
+GO:0006094,gluconeogenesis,AT2G21330
+GO:0034628,de novo' NAD biosynthetic process from aspartate,AT5G50210
+GO:0006979,response to oxidative stress,AT1G20620
+GO:0015995,chlorophyll biosynthetic process,AT1G74470
+GO:0048589,developmental growth,AT5G01740
+GO:0009416,response to light stimulus,AT4G33467
+GO:0009409,response to cold,AT2G05070
+GO:0044248,cellular catabolic process,AT1G28600
+GO:0008643,carbohydrate transport,AT3G48740
+GO:1901605,alpha-amino acid metabolic process,AT5G21105
+GO:0006520,cellular amino acid metabolic process,AT5G50450
+GO:0009850,auxin metabolic process,AT2G31750
+GO:0043436,oxoacid metabolic process,AT5G02380
+GO:0007623,circadian rhythm,AT1G18330
+GO:0009755,hormone-mediated signaling pathway,AT1G28660
+GO:0009737,response to abscisic acid,AT5G13180
+GO:0051301,cell division,AT5G16750
+GO:0051865,protein autoubiquitination,AT3G19910
+GO:0071456,cellular response to hypoxia,AT1G68840
+GO:0007623,circadian rhythm,AT1G22770
+GO:0009737,response to abscisic acid,AT5G56140
+GO:0006865,amino acid transport,AT5G63850
+GO:0006355,regulation of transcription,AT1G32640
+GO:0006412,translation,AT3G17465
+GO:0019310,inositol catabolic process,AT1G14520
+GO:0006334,nucleosome assembly,AT2G19480
+GO:1901605,alpha-amino acid metabolic process,AT5G39050
+GO:0006355,regulation of transcription,AT3G50650
+GO:0070125,mitochondrial translational elongation,AT1G45332
+GO:0009416,response to light stimulus,AT4G08300
+GO:0051017,actin filament bundle assembly,AT1G64500
+GO:0006406,mRNA export from nucleus,AT5G59950
+GO:0010629,negative regulation of gene expression,AT2G33410
+GO:0009416,response to light stimulus,AT4G02920
+GO:0009611,response to wounding,AT1G32920
+GO:0009639,response to red or far red light,AT5G64840
+GO:0009737,response to abscisic acid,AT1G75240
+GO:0071446,cellular response to salicylic acid stimulus,AT1G25400
+GO:0005975,carbohydrate metabolic process,AT1G70820
+GO:0009737,response to abscisic acid,AT3G02140
+GO:0009694,jasmonic acid metabolic process,AT5G63450
+GO:0019252,starch biosynthetic process,AT1G32900
+GO:0009409,response to cold,AT3G23830
+GO:0019344,cysteine biosynthetic process,AT4G29840
+GO:0006515,protein quality control for misfolded or incompletely synthesized proteins,AT5G45390
+GO:0009639,response to red or far red light,AT1G64900
+GO:0051443,positive regulation of ubiquitin-protein transferase activity,AT3G12760
+GO:0010019,chloroplast-nucleus signaling pathway,AT3G59400
+GO:0006644,phospholipid metabolic process,AT2G45670
+GO:0010218,response to far red light,AT4G16780
+GO:0055085,transmembrane transport,AT5G14570
+GO:0009409,response to cold,AT5G58770
+GO:0009416,response to light stimulus,AT5G60680
+GO:0016126,sterol biosynthetic process,AT1G20330
+GO:0009416,response to light stimulus,AT1G29920
+GO:0097272,ammonium homeostasis,AT1G64780
+GO:0009639,response to red or far red light,AT1G03130
+GO:0015031,protein transport,AT3G49870
+GO:0042128,nitrate assimilation,AT2G15620
+GO:0006508,proteolysis,AT5G20520
+GO:0009535,chloroplast thylakoid membrane,AT4G17600
+GO:0006094,gluconeogenesis,AT3G12780
+GO:0007623,circadian rhythm,AT5G52310
+GO:0009416,response to light stimulus,AT1G29930
+GO:0031347,regulation of defense response,AT1G70700
+GO:0006412,translation,AT3G27160
+GO:0046475,glycerophospholipid catabolic process,AT5G41080
+GO:0019310,inositol catabolic process,AT2G19800
+GO:0006887,exocytosis,AT5G59730
+GO:0009409,response to cold,AT1G67090
+GO:0009416,response to light stimulus,AT2G34420
+GO:0009416,response to light stimulus,AT3G63160
+GO:0009409,response to cold,AT2G21660
+GO:0009409,response to cold,AT4G37610
+GO:0006355,regulation of transcription,AT1G06040
+GO:0006412,translation,AT5G30510
+GO:0015986,proton motive force-driven ATP synthesis,AT4G32260
+GO:0009416,response to light stimulus,AT5G56550
+GO:0009639,response to red or far red light,AT5G18670
+GO:0006412,translation,AT1G07320
+GO:0009416,response to light stimulus,AT4G36850
+GO:0006734,NADH metabolic process,AT5G58330
+GO:0016567,protein ubiquitination,AT5G22920
+GO:0032544,plastid translation,AT2G38140
+GO:0009767,photosynthetic electron transport chain,AT4G03280
+GO:0032055,negative regulation of translation in response to stress,AT5G02160
+GO:0010115,regulation of abscisic acid synthesis,AT1G13930
+GO:0007623,circadian rhythm,AT4G37930
+GO:0009408,response to heat,AT5G02500
+GO:0015979,photosynthesis,AT1G06680
+GO:0015979,photosynthesis,AT1G20020
+GO:0015979,photosynthesis,AT5G38410
+GO:0006412,translation,AT2G41840
+GO:0009639,response to red or far red light,AT1G03130
+GO:0009231,riboflavin biosynthetic process,AT5G64300
+GO:0009767,photosynthetic electron transport chain,AT4G05180
+GO:0006006,glucose metabolic process,AT1G12900
+GO:0006412,translation,AT2G43030
+GO:0009416,response to light stimulus,AT5G38420
+GO:0009767,photosynthetic electron transport chain,AT5G66190
+GO:0015979,photosynthesis,AT3G61470
+GO:0006412,translation,AT2G33800
+GO:0055085,transmembrane transport,AT2G39010
+GO:0009416,response to light stimulus,AT5G01530
+GO:0006412,translation,AT1G35680
+GO:0043086,negative regulation of catalytic activity,AT3G15360
+GO:0015979,photosynthesis,AT4G22890
+GO:0010027,thylakoid membrane organization,AT1G44575
+GO:0006952,defense response,AT5G36910
+GO:0010270,photosystem II oxygen evolving complex assembly,AT1G79040
+GO:0009416,response to light stimulus,AT3G47070
+GO:0006412,translation,AT3G15190
+GO:0015979,photosynthesis,AT1G55670
+GO:0033013,tetrapyrrole metabolic process,AT2G33430
+GO:0016567,protein ubiquitination,AT1G02610
+GO:0009416,response to light stimulus,AT4G25650
+GO:0010218,response to far red light,AT4G14130
+GO:0006355,regulation of transcription,AT1G32640
+GO:0009416,response to light stimulus,AT1G55480
+GO:0015979,photosynthesis,AT2G05070
+GO:0015979,photosynthesis,AT5G14780
+GO:0009416,response to light stimulus,AT4G32340
+GO:0009737,response to abscisic acid,AT2G05520
+GO:0005975,carbohydrate metabolic process,AT2G42790
+GO:0009416,response to light stimulus,AT3G50685
+GO:0009737,response to abscisic acid,AT1G32080
+GO:0009409,response to cold,AT2G37220
+GO:0015979,photosynthesis,AT5G54270
+GO:0006979,response to oxidative stress,AT1G20620
+GO:0009416,response to light stimulus,AT3G05350
+GO:0006414,translational elongation,AT5G19510
+GO:0015979,photosynthesis,AT1G08380
+GO:0009416,response to light stimulus,AT3G62410
+GO:0055085,transmembrane transport,AT2G39010
+GO:0015986,proton motive force-driven ATP synthesis,AT4G32260
+GO:0015979,photosynthesis,AT1G55480
+GO:0009409,response to cold,AT2G37220
+GO:0006412,translation,AT2G43030
+GO:0006734,NADH metabolic process,AT5G58330
+GO:0006413,translational initiation,AT5G35680
+GO:0008652,cellular amino acid biosynthetic process,AT1G14810
+GO:0006413,translational initiation,AT2G04520
+GO:0006412,translation,AT2G33800
+GO:0009409,response to cold,AT1G32060
+GO:0009416,response to light stimulus,AT5G01530
+GO:0006412,translation,AT2G41840
+GO:0009416,response to light stimulus,AT1G51200
+GO:0006631,fatty acid metabolic process,AT3G48990
+GO:0009642,response to light intensity,AT5G18110
+GO:0015031,protein transport,AT3G49870
+GO:0009409,response to cold,AT5G04590
+GO:0006412,translation,AT1G07320
+GO:0006508,proteolysis,AT5G20520
+GO:0006414,translational elongation,AT5G57290
+GO:0009099,valine biosynthetic process,AT3G48560
+GO:0009099,valine biosynthetic process,AT3G58610
+GO:0015031,protein transport,AT1G32050
+GO:0015979,photosynthesis,AT3G54890
+GO:0006886,intracellular protein transport,AT3G62290
+GO:0006886,intracellular protein transport,AT4G20410
+GO:0006412,translation,AT4G01310
+GO:0006412,translation,AT5G35530
+GO:0042128,nitrate assimilation,AT2G15620
+GO:0009416,response to light stimulus,AT2G34460
+GO:0051865,protein autoubiquitination,AT3G12630
+GO:0009409,response to cold,AT5G12250
+GO:0009416,response to light stimulus,AT1G18660
+GO:0006457,protein folding,AT3G11830
+GO:0002182,cytoplasmic translational elongation,AT2G27720
+GO:0071215,cellular response to abscisic acid stimulus,AT4G32030
+GO:1902600,proton transmembrane transport,AT1G19910
+GO:0009737,response to abscisic acid,AT4G38970
+GO:0015979,photosynthesis,AT3G53920
+GO:0010468,regulation of gene expression,AT2G25970
+GO:0015979,photosynthesis,AT1G67090
+GO:0009416,response to light stimulus,AT4G25650
+GO:0009416,response to light stimulus,AT1G29930
+GO:0055085,transmembrane transport,AT4G23400
+GO:0009416,response to light stimulus,AT4G28030
+GO:0005975,carbohydrate metabolic process,AT3G55430
+GO:0002181,cytoplasmic translation,AT4G16720
+GO:0006414,translational elongation,AT5G19510
+GO:0006414,translational elongation,AT5G47700
+GO:0006412,translation,AT1G15930
+GO:0006414,translational elongation,AT4G00810
+GO:0006413,translational initiation,AT4G19210
+GO:1902600,proton transmembrane transport,AT1G76030
+GO:0009416,response to light stimulus,AT4G32760
+GO:0006412,translation,AT3G15190
+GO:0010218,response to far red light,AT3G18780
+GO:0006508,proteolysis,AT4G36195
+GO:0006952,defense response,AT1G70830
+GO:0009737,response to abscisic acid,AT3G07790
+GO:0009737,response to abscisic acid,AT4G32150
+GO:0009642,response to light intensity,AT5G65380
+GO:0006508,proteolysis,AT4G31340
+GO:0003743,translation initiation factor activity,AT5G57870
+GO:0003743,translation initiation factor activity,AT2G24050
+GO:0003743,translation initiation factor activity,AT3G60240

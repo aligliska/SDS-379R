@@ -1,0 +1,80 @@
+---
+title: "Part3 Code"
+author: "Alice Gee"
+date: "4/10/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(dplyr)
+library(knitr)
+```
+
+```{r}
+twoFactor <- read.csv("2Factor_Summary.csv")
+twoFactor %>% rename("Type of Analysis" = type_analysis) %>% 
+  rename("# of Significant Findings" = sig_findings) %>% 
+  rename("Estimated # of False Discovery" = false_discovery) %>% 
+  knitr::kable(caption = "Summary Of Genotype:Time Differential Analysis")
+```
+
+
+```{r}
+oneFactorFull <- read.csv("1Factor_Full.csv")
+oneFactorFull %>% rename("Type of Analysis" = type_test) %>%  
+  rename("Computational Method" = method) %>% 
+  rename("Contrast Type" = contrast_type) %>% 
+  rename("# of Significant Findings" = significant_findings) %>%
+  rename("Estimated # of False Discovery" = false_discovery) %>% 
+  rename("Time (s)" = time) %>% 
+  knitr::kable(caption = "Summary Of Col Day:Dark Contrast with Model Set-Up ")
+```
+
+```{r}
+oneFactorFull %>% group_by(method) %>% summarise("Average Time" = mean(time))
+for (i in seq(2, nrow(oneFactorFull), 2)){
+  print(oneFactorFull$significant_findings[i] / oneFactorFull$significant_findings[i - 1])
+}
+```
+
+```{r}
+oneFactorTestOnly <- read.csv("1Factor_TestOnly.csv")
+# RNA-Seq Summary 
+oneFactorTestOnly %>% filter(type_test == "rna-seq") %>% 
+  select(-type_test) %>% 
+  rename("Computational Method" = method) %>% 
+  rename("Contrast Type" = contrast_type) %>% 
+  rename("# of Significant Findings" = significant_findings) %>%
+  rename("Estimated # of False Discovery" = false_discovery) %>% 
+  rename("Time (s)" = time) %>% 
+  knitr::kable(caption = "Summary Of Pairwise 1-Factor Contrasts (Test Only) for RNA-Seq")
+
+# Ribo-Seq Summary 
+oneFactorTestOnly %>% filter(type_test == "ribo-seq") %>% 
+  select(-type_test) %>% 
+  rename("Computational Method" = method) %>% 
+  rename("Contrast Type" = contrast_type) %>% 
+  rename("# of Significant Findings" = significant_findings) %>%
+  rename("Estimated # of False Discovery" = false_discovery) %>% 
+  rename("Time (s)" = time) %>% 
+  knitr::kable(caption = "Summary Of Pairwise 1-Factor Contrasts (Test Only) for Ribo-Seq")
+```
+```{r}
+oneFactorTestOnly %>% group_by(method) %>% summarise("Average Time" = mean(time))
+
+# RNA-Seq
+for (i in seq(2, 16, 2)){
+  print(oneFactorTestOnly$significant_findings[i] / oneFactorTestOnly$significant_findings[i - 1])
+}
+```
+
+```{r}
+# Ribo-Seq
+for (i in seq(18, 32, 2)){
+  print(oneFactorTestOnly$significant_findings[i] / oneFactorTestOnly$significant_findings[i - 1])
+}
+```
